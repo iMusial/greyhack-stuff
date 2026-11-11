@@ -1,4 +1,4 @@
-# greyHack-Stuff
+# greyhack-stuff
 Projects I've made using greyscript, a fork of miniscript for the game Grey Hack.
 
 
