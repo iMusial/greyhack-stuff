@@ -1,0 +1,14 @@
+cryptools = include_lib("/lib/crypto.so")
+if not cryptools then exit("Error: Missing crypto library")
+
+if params.len != 1 or params[0] == "-h" or params[0] == "--help" then exit("hashcat usage: hashcat [MD5 hash]")
+
+hash = params[0] //string, this should be the hash
+plainText = cryptools.decipher(hash)
+
+if plainText then
+	print("Status: Cracked")
+	exit("Plaintext from MD5: " + plainText) 
+	else
+	exit("Status: Exhausted")
+end if
